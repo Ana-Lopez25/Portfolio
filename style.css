@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #301906;
+    color: #382615;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    color: #382615;
+}
+
+/* Barra de navegação fixa */
+header {
+    position: sticky; /* Fixa o cabeçalho no topo */
+    top: 0; /* Alinha ao topo */
+    z-index: 1000; /* Garante que a barra fique acima de outros elementos */
+    background-color: #4e331c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 1rem; /* Espaçamento interno */
+}
+
+/* Adiciona margem superior ao conteúdo para não ficar atrás da barra */
+main {
+    margin-top: 80px; /* Ajuste conforme a altura do header */
+}
+
+
+header h1 {
+    color: #382615;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que links quebrem linha em telas pequenas */
+}
+
+nav a {
+    color: #382615;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #4e311c;
+}
+
+section#hero {
+    position: relative;
+    height: 80vh;
+    background-image: url('https://source.unsplash.com/1600x900/?forest,light');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #382615;
+    text-align: center;
+    opacity: 0.95;
+    padding: 1rem;
+}
+
+section#hero h2 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+section#hero p {
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+section {
+    padding: 1rem 2rem;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #967c65;
+}
+
+section p {
+    color: #6b4625;
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.bg-neutral-200 {
+    background-color: #503720;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bg-neutral-200:hover {
+    transform: translateY(-5px);
+    background-color: #664c33;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste automático das colunas */
+}
+
+footer {
+    background-color: #B58863;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    color: #6b4625;
+    font-size: 1rem;
+}
+
+/* Animação para fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Responsividade */
+
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem; /* Reduz tamanho do título */
+    }
+
+    nav a {
+        padding: 6px 12px; /* Ajusta espaçamento dos links */
+        font-size: 0.9rem;
+    }
+
+    section#hero h2 {
+        font-size: 2rem; /* Reduz tamanho do texto */
+    }
+
+    section#hero p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        gap: 1rem; /* Reduz espaço entre os itens */
+    }
+}
+
+/* Ajustes para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Links empilhados */
+        align-items: center;
+    }
+
+    section#hero h2 {
+        font-size: 1.5rem; /* Texto menor */
+    }
+
+    section#hero p {
+        font-size: 0.9rem;
+    }
+
+    .bg-neutral-200 {
+        padding: 1rem; /* Reduz tamanho dos blocos */
+    }
+    
+}
